@@ -1,0 +1,1925 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Minerva Shop</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="distribution" content="global">
+<meta name="revisit-after" content="2 Days">
+<meta name="robots" content="ALL">
+<meta name="rating" content="8 YEARS">
+<meta name="Language" content="en-us">
+<meta name="GOOGLEBOT" content="NOARCHIVE">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="title" content="Minerva Shop">
+<meta name="description" content="Мой магазинчик, в котором вы можете приобрести что-то за время.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minervabot.su/shop">
+<meta property="og:title" content="Minerva Shop">
+<meta property="og:description" content="Мой магазинчик, в котором вы можете приобрести что-то за время.">
+<meta property="og:image" content="/assets/avatar.png">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
+<link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="shortcut icon" href="assets/avatar.png">
+<link rel="apple-touch-icon" href="assets/avatar.png">
+<style>
+        @import url('css-1');
+        :root {
+            --primary-color: #185ee0;
+            --secondary-color: #e6eef9;
+        }
+
+        .modal-content {
+            background-color: #181920;
+            box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+        }
+
+        .wsk-cp-product{
+            background:#191c24;
+            padding:15px;
+            border-radius:6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            position:relative;
+            margin:20px auto;
+        }
+        .wsk-cp-img{
+            position:absolute;
+            top:5px;
+            left:50%;
+            transform:translate(-50%);
+            -webkit-transform:translate(-50%);
+            -ms-transform:translate(-50%);
+            -moz-transform:translate(-50%);
+            -o-transform:translate(-50%);
+            -khtml-transform:translate(-50%);
+            width: 100%;
+            padding: 15px;
+            transition: all 0.2s ease-in-out;
+        }
+        .wsk-cp-img img{
+            width:100%;
+            transition: all 0.2s ease-in-out;
+            border-radius:6px;
+        }
+        .wsk-cp-product:hover .wsk-cp-img{
+            top:-40px;
+        }
+        /*.wsk-cp-product:hover .wsk-cp-img img{*/
+        /*    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);*/
+        /*}*/
+        .wsk-cp-text{
+            padding-top:100%;
+        }
+        .wsk-cp-text .category{
+            text-align:center;
+            font-size:15px;
+            font-weight:bold;
+            padding:5px;
+            margin-bottom:45px;
+            position:relative;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .wsk-cp-text .category > *{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            -khtml-transform: translate(-50%,-50%);
+
+        }
+        .wsk-cp-text .category > span{
+            padding: 12px 30px;
+            border: 1px solid #20232c;
+            background: #181920;
+            color:#fff;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            border-radius:27px;
+            transition: all 0.05s ease-in-out;
+
+        }
+
+        .wsk-cp-product:hover .wsk-cp-text .category > span{
+            box-shadow: none;
+            padding: 11px 28px;
+        }
+        .wsk-cp-product:hover .wsk-cp-text .category{
+            margin-top: 0px;
+        }
+        .wsk-cp-text .title-product{
+            text-align:center;
+        }
+        .wsk-cp-text .title-product h3{
+            font-size:20px;
+            margin:15px auto;
+            width:100%;
+            background-size: cover;
+            color: #000000;
+            font-weight: bold;
+        }
+        .wsk-cp-text .description-prod p{
+            margin:0;
+        }
+        
+        @media screen and (max-width: 991px) {
+            .wsk-cp-product{
+                margin:40px auto;
+            }
+            .wsk-cp-product .wsk-cp-img{
+                top:-40px;
+            }
+            .wsk-cp-product .wsk-cp-img img{
+                box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            }
+            .wsk-cp-product .wsk-cp-text .category > span{
+                border-color:#ddd;
+                box-shadow: none;
+                padding: 11px 28px;
+            }
+            .wsk-cp-product .wsk-cp-text .category{
+                margin-top: 0px;
+            }
+        }
+
+        div.rare-1{
+            box-shadow: 0 0 8px rgba(192, 192, 192, .2), 0 0 2px rgba(192, 192, 192, .2), 0 1px 0 rgba(192, 192, 192, .2), 0 0 9px rgba(192, 192, 192, .2);
+        }
+        div.rare-1 .title-product h3, strong.rare-1{
+            text-shadow: 0 0 8px rgba(192, 192, 192, .5), 0 0 2px rgba(192, 192, 192, .5), 0 1px 0 rgba(192, 192, 192, .5), 0 0 9px rgba(192, 192, 192, .5);
+        }
+        .wsk-cp-product.rare-1:hover .wsk-cp-text .category > span{
+            border-color: #c0c0c0;
+        }
+
+        div.rare-2{
+            box-shadow: 0 0 8px rgba(123, 104, 238, .2), 0 0 2px rgba(123, 104, 238, .2), 0 1px 0 rgba(123, 104, 238, .2), 0 0 9px rgba(123, 104, 238, .2);
+        }
+        div.rare-2 .title-product h3, strong.rare-2{
+            text-shadow: 0 0 8px rgba(123, 104, 238, .5), 0 0 2px rgba(123, 104, 238, .5), 0 1px 0 rgba(123, 104, 238, .5), 0 0 9px rgba(123, 104, 238, .5);
+        }
+        .wsk-cp-product.rare-2:hover .wsk-cp-text .category > span{
+            border-color: #7B68EE;
+        }
+
+        div.rare-3{
+            box-shadow: 0 0 8px rgba(139, 0, 139, .2), 0 0 2px rgba(139, 0, 139, .2), 0 1px 0 rgba(139, 0, 139, .2), 0 0 9px rgba(139, 0, 139, .2);
+        }
+        div.rare-3 .title-product h3, strong.rare-3{
+            text-shadow: 0 0 8px rgba(139, 0, 139, .5), 0 0 2px rgba(139, 0, 139, .5), 0 1px 0 rgba(139, 0, 139, .5), 0 0 9px rgba(139, 0, 139, .5);
+        }
+        .wsk-cp-product.rare-3:hover .wsk-cp-text .category > span{
+            border-color: #8B008B;
+        }
+
+        div.rare-4{
+            box-shadow: 0 0 8px rgba(0, 206, 209, .2), 0 0 2px rgba(0, 206, 209, .2), 0 1px 0 rgba(0, 206, 209, .2), 0 0 9px rgba(0, 206, 209, .2);
+        }
+        div.rare-4 .title-product h3, strong.rare-4{
+            text-shadow: 0 0 8px rgba(0, 206, 209, .5), 0 0 2px rgba(0, 206, 209, .5), 0 1px 0 rgba(0, 206, 209, .5), 0 0 9px rgba(0, 206, 209, .5);
+        }
+        .wsk-cp-product.rare-4:hover .wsk-cp-text .category > span{
+            border-color: #00CED1;
+        }
+
+        div.rare-5{
+            box-shadow: 0 0 8px rgba(220, 20, 60, .2), 0 0 2px rgba(220, 20, 60, .2), 0 1px 0 rgba(220, 20, 60, .2), 0 0 9px rgba(220, 20, 60, .2);
+        }
+        div.rare-5 .title-product h3, strong.rare-5{
+            text-shadow: 0 0 8px rgba(220, 20, 60, .5), 0 0 2px rgba(220, 20, 60, .5), 0 1px 0 rgba(220, 20, 60, .5), 0 0 9px rgba(220, 20, 60, .5);
+        }
+        .wsk-cp-product.rare-5:hover .wsk-cp-text .category > span{
+            border-color: #DC143C;
+        }
+
+
+
+
+        .col-8 .input-group input{
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px #00FFFF solid;
+        }
+        .input-group input:focus{
+            box-shadow: none;
+        }
+
+        #toast-container {
+            position: sticky;
+            z-index: 1055;
+            top: 0;
+        }
+
+        .toast-body {
+            background-color: #191c24;
+        }
+        .toast-header {
+            border-bottom: unset;
+        }
+
+        #toast-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 5px
+        }
+
+        #toast-container > #toast-wrapper > .toast {
+            min-width: 150px;
+            box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+        }
+
+        #toast-container > #toast-wrapper > .toast >.toast-header strong {
+            padding-right: 20px
+        }
+
+        .line {
+            text-align: center;
+        }
+
+
+
+
+        /* TABS */
+
+        .container-1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tabs {
+            display: flex;
+            position: relative;
+            background-color: #191c24;
+            box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+            padding: 0.75rem;
+            border-radius: 99px;
+        }
+        .tabs * {
+            z-index: 2;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 54px;
+            width: 200px;
+            font-size: 1.25rem;
+            font-weight: 500;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: color 0.15s ease-in;
+        }
+
+        input[type=radio]:checked + label {
+            color: var(--primary-color);
+        }
+
+        /*input[id=tab1]:checked ~ .glider {*/
+        /*    transform: translateX(0);*/
+        /*}*/
+
+        /*input[id=tab3]:checked ~ .glider {*/
+        /*    transform: translateX(100%);*/
+        /*}*/
+
+        /*input[id=tab2]:checked ~ .glider {*/
+        /*    transform: translateX(200%);*/
+        /*}*/
+
+        .glider {
+            position: absolute;
+            display: flex;
+            height: 54px;
+            width: 200px;
+            background-color: var(--secondary-color);
+            z-index: 1;
+            border-radius: 99px;
+            transition: 0.25s ease-out;
+        }
+
+        @media (max-width: 700px) {
+            .tabs {
+                transform: scale(0.6);
+            }
+        }
+
+
+
+
+
+
+
+
+
+        .tabcontent {
+            display: none;
+        }
+        .content .active {
+            display: block;
+        }
+        .tabcontent p {
+            margin-bottom: 12px;
+        }
+        .tabcontent p:last-child {
+            margin-bottom: 0;
+        }
+
+        #tabcontent2 .wsk-cp-product{
+            background:#191c24;
+            padding: 15px;
+            padding-bottom: 1px;
+            border-radius:6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            position:relative;
+            margin: 10px auto;
+        }
+        #tabcontent2 .wsk-cp-img{
+            position:absolute;
+            top:5px;
+            left:50%;
+            transform:translate(-50%);
+            -webkit-transform:translate(-50%);
+            -ms-transform:translate(-50%);
+            -moz-transform:translate(-50%);
+            -o-transform:translate(-50%);
+            -khtml-transform:translate(-50%);
+            width: 100%;
+            padding: 15px;
+            transition: all 0.2s ease-in-out;
+        }
+        #tabcontent2 .wsk-cp-img img{
+            width: 100%;
+            height: 140px;
+            transition: all 0.2s ease-in-out;
+            border-radius: 6px;
+            object-fit: cover;
+            object-position: center;
+        }
+        #tabcontent2 .wsk-cp-product:hover .wsk-cp-img{
+            top:-40px;
+        }
+        #tabcontent2 .wsk-cp-text{
+            padding-top: 55%;
+        }
+        #tabcontent2 .wsk-cp-text .category{
+            text-align:center;
+            font-size:15px;
+            font-weight:bold;
+            padding:5px;
+            margin-bottom:45px;
+            position:relative;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        #tabcontent2 .wsk-cp-text .category > *{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            -khtml-transform: translate(-50%,-50%);
+
+        }
+        #tabcontent2 .wsk-cp-text .category > span{
+            padding: 12px 30px;
+            border: 1px solid #20232c;
+            background: #181920;
+            color:#fff;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            border-radius:27px;
+            transition: all 0.05s ease-in-out;
+
+        }
+
+        #tabcontent2 .wsk-cp-product:hover .wsk-cp-text .category > span{
+            box-shadow: none;
+            padding: 11px 28px;
+        }
+        #tabcontent2 .wsk-cp-product:hover .wsk-cp-text .category{
+            margin-top: 0px;
+        }
+        #tabcontent2 .wsk-cp-text .title-product{
+            text-align:center;
+        }
+        #tabcontent2 .wsk-cp-text .title-product h3{
+            font-size:20px;
+            margin:15px auto;
+            width:100%;
+            background-size: cover;
+            color: #000000;
+            font-weight: bold;
+        }
+        #tabcontent2 .wsk-cp-text .description-prod p{
+            margin:0;
+        }
+
+        @media screen and (max-width: 991px) {
+            #tabcontent2 .wsk-cp-product{
+                margin:40px auto;
+            }
+            #tabcontent2 .wsk-cp-product .wsk-cp-img{
+                top:-40px;
+            }
+            #tabcontent2 .wsk-cp-product .wsk-cp-img img{
+                box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            }
+            #tabcontent2 .wsk-cp-product .wsk-cp-text .category > span{
+                border-color:#ddd;
+                box-shadow: none;
+                padding: 11px 28px;
+            }
+            #tabcontent2 .wsk-cp-product .wsk-cp-text .category{
+                margin-top: 0px;
+            }
+        }
+
+        #tabcontent2 div.rare-1{
+            box-shadow: 0 0 8px rgba(192, 192, 192, .2), 0 0 2px rgba(192, 192, 192, .2), 0 1px 0 rgba(192, 192, 192, .2), 0 0 9px rgba(192, 192, 192, .2);
+        }
+        #tabcontent2 div.rare-1 .title-product h3, strong.rare-1{
+            text-shadow: 0 0 8px rgba(192, 192, 192, .5), 0 0 2px rgba(192, 192, 192, .5), 0 1px 0 rgba(192, 192, 192, .5), 0 0 9px rgba(192, 192, 192, .5);
+        }
+        #tabcontent2 .wsk-cp-product.rare-1:hover .wsk-cp-text .category > span{
+            border-color: #c0c0c0;
+        }
+
+        #tabcontent2 div.rare-2{
+            box-shadow: 0 0 8px rgba(123, 104, 238, .2), 0 0 2px rgba(123, 104, 238, .2), 0 1px 0 rgba(123, 104, 238, .2), 0 0 9px rgba(123, 104, 238, .2);
+        }
+        #tabcontent2 div.rare-2 .title-product h3, strong.rare-2{
+            text-shadow: 0 0 8px rgba(123, 104, 238, .5), 0 0 2px rgba(123, 104, 238, .5), 0 1px 0 rgba(123, 104, 238, .5), 0 0 9px rgba(123, 104, 238, .5);
+        }
+        #tabcontent2 .wsk-cp-product.rare-2:hover .wsk-cp-text .category > span{
+            border-color: #7B68EE;
+        }
+
+        #tabcontent2 div.rare-3{
+            box-shadow: 0 0 8px rgba(139, 0, 139, .2), 0 0 2px rgba(139, 0, 139, .2), 0 1px 0 rgba(139, 0, 139, .2), 0 0 9px rgba(139, 0, 139, .2);
+        }
+        #tabcontent2 div.rare-3 .title-product h3, strong.rare-3{
+            text-shadow: 0 0 8px rgba(139, 0, 139, .5), 0 0 2px rgba(139, 0, 139, .5), 0 1px 0 rgba(139, 0, 139, .5), 0 0 9px rgba(139, 0, 139, .5);
+        }
+        #tabcontent2 .wsk-cp-product.rare-3:hover .wsk-cp-text .category > span{
+            border-color: #8B008B;
+        }
+
+        #tabcontent2 div.rare-4{
+            box-shadow: 0 0 8px rgba(0, 206, 209, .2), 0 0 2px rgba(0, 206, 209, .2), 0 1px 0 rgba(0, 206, 209, .2), 0 0 9px rgba(0, 206, 209, .2);
+        }
+        #tabcontent2 div.rare-4 .title-product h3, strong.rare-4{
+            text-shadow: 0 0 8px rgba(0, 206, 209, .5), 0 0 2px rgba(0, 206, 209, .5), 0 1px 0 rgba(0, 206, 209, .5), 0 0 9px rgba(0, 206, 209, .5);
+        }
+        #tabcontent2 .wsk-cp-product.rare-4:hover .wsk-cp-text .category > span{
+            border-color: #00CED1;
+        }
+
+        #tabcontent2 div.rare-5{
+            box-shadow: 0 0 8px rgba(220, 20, 60, .2), 0 0 2px rgba(220, 20, 60, .2), 0 1px 0 rgba(220, 20, 60, .2), 0 0 9px rgba(220, 20, 60, .2);
+        }
+        #tabcontent2 div.rare-5 .title-product h3, strong.rare-5{
+            text-shadow: 0 0 8px rgba(220, 20, 60, .5), 0 0 2px rgba(220, 20, 60, .5), 0 1px 0 rgba(220, 20, 60, .5), 0 0 9px rgba(220, 20, 60, .5);
+        }
+        #tabcontent2 .wsk-cp-product.rare-5:hover .wsk-cp-text .category > span{
+            border-color: #DC143C;
+        }
+
+        #tabcontent3 .wsk-cp-product {
+            height: 135px;
+        }
+        #tabcontent3 .wsk-cp-text {
+            padding-top: 28%;
+        }
+    </style>
+</head>
+<body id="page-top" class="homepage work-zoom one-page" data-spy="scroll">
+<div class="se-pre-con">
+<div class="spinner">
+<div class="triple-spinner"></div>
+</div>
+</div>
+<div id="current" class="main">
+<header class="navbar navbar-custom header" id="header">
+<div class="navbar-expand">
+<div class="container">
+<div class="row m-0 align-items-center">
+<div class="col-lg-3 col-6 left-sm p-0">
+<div class="header-middle-left">
+<div class="logo navbar-header float-none-sm">
+<a class="navbar-brand page-scroll mt-4" href="index.htm">
+<h1><b>Minerva</b></h1>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-7 col-1 p-0">
+<div class="overlay"></div>
+<div id="menu" class="navbar-collapse collapse">
+<ul id="menu-main" class="nav navbar-nav">
+<li class="level login pb-2 border-0">
+<a class="page-scroll" href="javascript:void(0)" onclick="login()" data-i18n="nav_login">Войти</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="partners.html" data-i18n="nav_partners">Партнёры</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="shop.html" data-i18n="nav_shop">Магазин</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="price.html" data-i18n="nav_donation">Пожертвование</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="https://discord.gg/G8EH6xbJB7" data-i18n="nav_support">Поддержка</a>
+</li>
+<li class="level">
+<div class="dropdown custom-dropdown">
+<a data-toggle="dropdown" class="dropdown-link" aria-haspopup="true" style="padding: 8px 20px;padding-top: 30px;color: #ffffff;margin: 0;font-weight: 500;font-size: 16px;position: relative;display: inline-block;-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;" data-i18n="nav_other">
+Прочее
+</a>
+<div class="dropdown-menu dropdown-menu-left mt-2" x-placement="bottom-start" style="background: #191c24;box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);">
+<a class="dropdown-item" href="privacy.html" data-i18n="nav_privacy">Политика конфиденциальности</a>
+<a class="dropdown-item" href="terms.html" data-i18n="nav_terms">Условия использования</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-2 col-5 p-0">
+<div class="right-side header-right-link">
+<ul>
+<li>
+<div class="signin d-none d-lg-block">
+<a href="#" class="btn btn-color" onclick="login()" data-i18n="nav_login">Login</a>
+</div>
+</li>
+<li class="side-toggle">
+<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"><i class="fas fa-bars"></i></button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="pb-5" style="margin-top:128px;">
+<div id="tabs">
+<div class="container-1">
+<div class="tabs">
+<input type="radio" id="tab1" name="tabs" checked="">
+<label class="tab" for="tab1" data-tab="1">Кольца</label>
+<input type="radio" id="tab2" name="tabs">
+<label class="tab" for="tab2" data-tab="2">Фоны profile</label>
+<input type="radio" id="tab3" name="tabs">
+<label class="tab" for="tab3" data-tab="3">Фоны rank</label>
+<input type="radio" id="tab4" name="tabs">
+<label class="tab" for="tab4" data-tab="4">Артефакты</label>
+<span class="glider"></span>
+</div>
+</div>
+<div class="container content">
+<div id="tabcontent1" data-tab="1" class="tabcontent">
+<div class="mt-40">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BB%D0%B5%D0%B4%D1%8F%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D1%8F.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="108">
+<span>40 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо ледяного короля</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BE%D0%BA%D0%B0_%D1%81%D0%B0%D1%83%D1%80%D0%BE%D0%BD%D0%B0.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="106">
+<span>30 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо Ока Саурона</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B8%D1%8F_%D1%87%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B7%D0%BC%D0%B5%D0%B8.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="99">
+<span>30 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо величия черной змеи</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BA%D0%BE%D1%81%D1%82%D1%8F%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D1%8F.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="98">
+<span>30 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо Костяного короля</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D0%B8_%D1%84%D0%B0%D1%80%D0%B0%D0%BE%D0%BD%D0%B0.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="107">
+<span>20 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо власти фараона</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%B3%D0%BB%D1%83%D0%B1%D0%B8%D0%BD_%D0%B7%D0%B5%D0%BC%D0%BB%D0%B8.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="100">
+<span>20 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо глубин земли</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D1%85_%D0%B3%D0%BB%D1%83%D0%B1%D0%B8%D0%BD.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="97">
+<span>20 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо морских глубин</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BF%D1%83%D1%87%D0%B8%D0%BD_%D0%B1%D0%B5%D0%B7%D0%B4%D0%BD%D1%8B.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="104">
+<span>15 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо пучин бездны</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BD%D0%BE%D0%BA%D1%81%D0%B0.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="102">
+<span>15 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо механического Нокса</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BF%D0%B0%D0%B4%D1%88%D0%B8%D1%85_%D0%BF%D1%80%D0%B5%D0%B4%D0%BA%D0%BE%D0%B2.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="101">
+<span>15 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо падших предков</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%D0%B0.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="105">
+<span>5 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо мирового механизма</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BD%D0%B5%D1%84%D1%80%D0%B8%D1%82%D0%B0.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="103">
+<span>5 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Кольцо темного нефрита</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabcontent0" data-tab="0" class="tabcontent">
+<div class="mt-40">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/silver_ore.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="7">
+<span>1 д 12 ч</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Серебряная руда</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/gold_ore.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="8">
+<span>5 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Золотая руда</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabcontent2" data-tab="2" class="tabcontent">
+<div class="mt-40">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/eyes_like_an_galaxy.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="118">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/colourblind_princess.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="115">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/rim_%5B2%5D.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="92">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/rim_%5B1%5D.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="91">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/she%E2%80%99s_not_your_friend%2C_but_she%E2%80%99s_your_boss.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="82">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/specter.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="74">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/hu_tao.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="64">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/ganyu.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="62">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/axium_tears.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="61">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-5">
+<div class="wsk-cp-img">
+<img src="assets/items/legend_of_princess_lust.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="37">
+<span>20 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/theatre_of_fools.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="119">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/despair.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="117">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/cathedrarhythm.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="111">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/blue_eyes.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="110">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/de-techno.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="109">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/golden_witch.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="93">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/people%2C_who_made_apocalypses.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="84">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/tokyo_street.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="83">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/rich_and_lonely.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="80">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/black_opium.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="79">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/black_%26_white_world.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="77">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/skadi_the_corrupting_heart.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="73">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/bubble_cosmic.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="67">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/maharoba.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="66">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/wantablack.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="65">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/surtr.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="63">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/asahina.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="59">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/interdimensional_velocity.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="25">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/im_afraid_of_people.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="24">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-4">
+<div class="wsk-cp-img">
+<img src="assets/items/the_veil_of_an_evil_genius.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="23">
+<span>15 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="/assets/items/͟͝͞ⅱ́̕.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="120">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/nightcity.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="116">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/spring_carnival.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="95">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/mystical_messenger_%5B2%5D.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="90">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/mystical_messenger_%5B1%5D.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="89">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/kazuha.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="86">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/cyberpunk.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="85">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/summer_weekend.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="78">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/epoque_%E2%80%94_conflict.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="76">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/epoque_%E2%80%94_dark.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="72">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/epoque_%E2%80%94_light.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="71">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/aquamarinne.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="69">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/mirror_image.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="60">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/grievous_lady.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="58">
+<span>10 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/luna.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="96">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/hate_%26_love.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="75">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/greatness.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="29">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/after.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="28">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/you_are_prey.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="27">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-3">
+<div class="wsk-cp-img">
+<img src="assets/items/the_tears_the_music_has_seen.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="26">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/snowy_lady.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="70">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/purgatory.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="68">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/crimson_death.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="94">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/kind_puppeteer.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="38">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/happiness_that_will_not_end.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="32">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/illusion.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="31">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/eyes_that_time_does_not_heal.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="30">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/feeling.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="35">
+<span>1 день</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/strange_song_of_a_sad_sunset.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="34">
+<span>1 день</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-1">
+<div class="wsk-cp-img">
+<img src="assets/items/summer_dreams.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="33">
+<span>1 день</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabcontent3" data-tab="3" class="tabcontent">
+<div class="mt-40">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/dream_girl_in_the_night_rain.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="39">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/yin_and_yang.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="48">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/my_home_fallen_angel.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="51">
+<span>7 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/keeper_of_time_and_space.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="42">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/dream_star.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="43">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/alice_in_wonderland.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="44">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/more_than_friendship.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="46">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/scarlet_queen.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="50">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/golden_birdcage_dragon.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="52">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/walpurgis_night.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="54">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/awakening_lucifer.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="55">
+<span>5 дней</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/evening_of_the_northern_archon.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="40">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/younger_sister_maid.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="41">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/dryads_eyes_of_despair.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="45">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/morning_senpai.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="47">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/seraphim_in_child_form.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="49">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="assets/items/time_eater.png" class="img-responsive">
+</div>
+<div class="wsk-cp-text">
+<div class="category" data-item="53">
+<span>3 дня</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabcontent4" data-tab="4" class="tabcontent">
+<div class="mt-40">
+<div class="row">
+<div class="col-md-3 col-sm-6 col-6">
+<div class="wsk-cp-product rare-2">
+<div class="wsk-cp-img">
+<img src="/assets/items/сосуд_повелителя_хроноса.png" class="img-responsive" style="max-height: 235px;width: fit-content;">
+</div>
+<div class="wsk-cp-text" style="padding-top: 110%">
+<div class="category" data-item="121">
+<span>5 дней</span>
+</div>
+<div class="title-product">
+<h3 class="text-white">Сосуд повелителя Хроноса</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="shopModal" tabindex="-1" role="dialog" aria-labelledby="shopModal-title" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-body text-white border-0" style="border-radius: 10px 10px 0px 0px;">
+<div class="line"><h3><strong></strong></h3></div>
+<h4 class="text-center">Вы действительно желаете купить данный предмет?</h4>
+</div>
+<div class="modal-footer border-0">
+<button type="button" class="btn btn-primary m-auto">Купить</button>
+<button type="button" class="btn btn-secondary m-auto" data-dismiss="modal">Отмена</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="scroll-top">
+<div class="scrollup"></div>
+</div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.downCount.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+    async function login(close) {
+        window.open('https://discord.com/oauth2/authorize?client_id=734730292484505631&redirect_uri=https://minervabot.su/authorize&response_type=code&scope=identify%20guilds', 'login', "menubar=no,location=no,resizable=no,scrollbars=ni,status=no,height=700,width=400,left=500,top=300");
+    }
+    let selected = 0;
+    $('.category').on('click', function(e) {
+        $('.se-pre-con').css("display","flex")
+        selected = $(this).data("item");
+        $.ajax({
+            url: `/api/shop/${$(this).data("item")}`,
+            method: 'GET',
+            success: res => {
+                $('.se-pre-con').css("display","none");
+                if(!res.purchased) return $.toast({
+                    title: 'Ошибка!',
+                    content: 'На вашем балансе недостаточно времени для покупки.',
+                    type: 'error',
+                    delay: 2500
+                });
+                $('.modal strong').text($(this).parents(".wsk-cp-text").find("h3").text())
+                $('.modal strong').attr("class",$(this).parents(".wsk-cp-product").attr("class").split(" ")[1])
+                $('.modal').modal()
+            }
+        })
+    });
+    $('.modal-footer .btn-primary').click(()=>{
+        $.ajax({
+            url: `/api/shop/${selected}/buy`,
+            method: 'GET',
+            success: res => {
+                $('.modal .btn[data-dismiss="modal"]').trigger('click');
+                if (res.error == '2') return $.toast({
+                    title: 'Ошибка!',
+                    content: 'Данный фон уже присутствует в вашем инвентаре.',
+                    type: 'error',
+                    delay: 2500
+                });
+                if (!res.purchased) return $.toast({
+                    title: 'Ошибка!',
+                    content: 'На вашем балансе недостаточно времени для покупки.',
+                    type: 'error',
+                    delay: 2500
+                });
+                $.toast({
+                    title: 'Успешно!',
+                    content: `Вы успешно приобрели <strong>${res.item.Name}</strong>.`,
+                    type: 'success',
+                    delay: 2500
+                });
+            }
+        })
+    })
+
+
+    const tabs = document.querySelectorAll('.tab'),
+          tabContents = document.querySelectorAll('.tabcontent');
+
+    const activateTab = tabnum => {
+        [...tabContents, ...tabs].forEach( t => {
+            t.classList.remove('active')
+        })
+
+        $(`.glider`).css({ transform: `translateX(${tabnum-1}00%)` })
+        $(`#tab${tabnum}`).addClass('active')
+        $(`#tabcontent${tabnum}`).addClass('active')
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            activateTab(tab.dataset.tab)
+        })
+    })
+
+    activateTab('1')
+
+</script>
+</body>
+</html>

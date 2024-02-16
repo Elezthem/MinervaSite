@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Minerva Price</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Подробная информация о всех вариантах поддержки бота.">
+<meta name="keywords" content="">
+<meta name="distribution" content="global">
+<meta name="revisit-after" content="2 Days">
+<meta name="robots" content="ALL">
+<meta name="rating" content="8 YEARS">
+<meta name="Language" content="en-us">
+<meta name="GOOGLEBOT" content="NOARCHIVE">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="title" content="Minerva Price">
+<meta name="description" content="Подробная информация о всех вариантах поддержки бота.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://minervabot.su/price">
+<meta property="og:title" content="Minerva Price">
+<meta property="og:description" content="Подробная информация о всех вариантах поддержки бота.">
+<meta property="og:image" content="/assets/avatar.png">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
+<link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="shortcut icon" href="assets/avatar.png">
+<link rel="apple-touch-icon" href="assets/avatar.png">
+<style>
+        .main {
+            overflow-y: auto!important;
+        }
+        .container .card {
+            margin: 0 auto 70px;
+            display: inline-block;
+            width: 280px;
+            text-align: center;
+            position: relative;
+            transition: all 0.2s;
+            cursor: pointer;
+            opacity: 0.5;
+            height: 470px;
+            border-radius: 14px;
+            -webkit-animation: intro 1s 0.2s forwards;
+            animation: intro 1s 0.2s forwards;
+            box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+            background: -webkit-linear-gradient(45deg, #191c24 0%, #191c24 100%);
+        }
+        .card:hover .card_inner__header img {
+            left: -50px;
+            transition: all 3.4s linear;
+        }
+        .card:hover .card_inner__cta button {
+            transform: scale(1);
+        }
+        .card:hover .card_inner__circle img {
+            -webkit-animation: spin 1s forwards;
+            animation: spin 1s forwards;
+        }
+        .card_inner__circle img {
+            top: 19px;
+        }
+        .card:hover {
+            opacity: 1;
+        }
+        .card_inner__circle {
+            overflow: hidden;
+            width: 70px;
+            position: absolute;
+            background: #F1F0ED;
+            z-index: 10;
+            height: 70px;
+            border-radius: 100px;
+            left: 0;
+            box-shadow: 0 0px 15px rgb(255 255 255 / 30%);
+            right: 0;
+            margin: auto;
+            border: 4px solid white;
+            top: 25px;
+        }
+        .card_inner__circle img {
+            height: 26px;
+            position: relative;
+            top: 19px;
+            transition: all 0.2s;
+        }
+        .card_inner__header img {
+            width: 120%;
+            position: relative;
+            top: -30px;
+            left: 0;
+            transition: all 0.1s linear;
+        }
+        .card_inner__content {
+            padding: 20px;
+            margin-top: 60px;
+        }
+        .card_inner__content .price {
+            color: white;
+            font-weight: 800;
+            font-size: 70px;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+        }
+        .card_inner__content .text {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 100;
+            margin-top: 45px;
+            font-size: 15px;
+            line-height: 16px;
+        }
+        .card_inner__content .title {
+            font-weight: 800;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.64);
+            margin-top: 40px;
+            padding-bottom: 25px;
+            font-size: 23px;
+            letter-spacing: 1px;
+        }
+        .card_inner__cta {
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 200px;
+        }
+        .card_inner__cta button {
+            padding: 16px;
+            box-shadow: 0px 0px 40px 4px #0ab1e8, 0px 0px 0px 2px rgb(255 255 255 / 19%) inset;
+            width: 100%;
+            background: -webkit-linear-gradient(-90deg, #0ab1e8 0%, #0a95e8 100%);
+            border: none;
+            font-family: sans-serif;
+            color: white;
+            outline: none;
+            font-size: 20px;
+            border-radius: 6px;
+            transform: scale(0.94);
+            cursor: pointer;
+            transition: box-shadow 0.3s, transform 0.3s 0.1s;
+        }
+        .card_inner__cta button span {
+            text-shadow: 0px 4px 18px #0ab1e8;
+        }
+        .card_inner__cta button:hover {
+            box-shadow: 0px 0px 60px 8px #0ab1e8, 0px 0px 0px 2px rgba(255, 255, 255, 0.19) inset;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        @keyframes intro {
+            0% {
+                transform: scale(0);
+            }
+            25% {
+                transform: scale(1.06);
+            }
+            50% {
+                transform: scale(0.965);
+            }
+            75% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        input[type="number"]::placeholder {
+            color: var(--secondary);
+        }
+
+        #toast-container {
+            position: sticky;
+            z-index: 1055;
+            top: 0;
+        }
+
+        .toast-body {
+            background-color: #191c24;
+        }
+        .toast-header {
+            border-bottom: unset;
+        }
+
+        #toast-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 5px
+        }
+
+        #toast-container > #toast-wrapper > .toast {
+            min-width: 150px;
+            box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+        }
+
+        #toast-container > #toast-wrapper > .toast >.toast-header strong {
+            padding-right: 20px
+        }
+    </style>
+</head>
+<body id="page-top" class="homepage work-zoom one-page" data-spy="scroll">
+<div class="se-pre-con">
+<div class="spinner">
+<div class="triple-spinner"></div>
+</div>
+</div>
+<div id="current" class="main" style="height: 100%;">
+<header class="navbar navbar-custom header" id="header">
+<div class="navbar-expand">
+<div class="container">
+<div class="row m-0 align-items-center">
+<div class="col-lg-3 col-6 left-sm p-0">
+<div class="header-middle-left">
+<div class="logo navbar-header float-none-sm">
+<a class="navbar-brand page-scroll mt-4" href="index.htm">
+<h1><b>Minerva</b></h1>
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-7 col-1 p-0">
+<div class="overlay"></div>
+<div id="menu" class="navbar-collapse collapse">
+<ul id="menu-main" class="nav navbar-nav">
+<li class="level login pb-2 border-0">
+<a class="page-scroll" href="javascript:void(0)" onclick="login()" data-i18n="nav_login">Войти</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="partners.html" data-i18n="nav_partners">Партнёры</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="shop.html" data-i18n="nav_shop">Магазин</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="price.html" data-i18n="nav_donation">Пожертвование</a>
+</li>
+<li class="level pb-1">
+<a class="page-scroll" href="https://discord.gg/G8EH6xbJB7" data-i18n="nav_support">Поддержка</a>
+</li>
+<li class="level">
+<div class="dropdown custom-dropdown">
+<a data-toggle="dropdown" class="dropdown-link" aria-haspopup="true" style="padding: 8px 20px;padding-top: 30px;color: #ffffff;margin: 0;font-weight: 500;font-size: 16px;position: relative;display: inline-block;-webkit-transition: all 0.4s ease 0s;-moz-transition: all 0.4s ease 0s;-ms-transition: all 0.4s ease 0s;-o-transition: all 0.4s ease 0s;transition: all 0.4s ease 0s;" data-i18n="nav_other">
+Прочее
+</a>
+<div class="dropdown-menu dropdown-menu-left mt-2" x-placement="bottom-start" style="background: #191c24;box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);">
+<a class="dropdown-item" href="privacy.html" data-i18n="nav_privacy">Политика конфиденциальности</a>
+<a class="dropdown-item" href="terms.html" data-i18n="nav_terms">Условия использования</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-2 col-5 p-0">
+<div class="right-side header-right-link">
+<ul>
+<li>
+<div class="signin d-none d-lg-block">
+<a href="#" class="btn btn-color" onclick="login()" data-i18n="nav_login">Login</a>
+</div>
+</li>
+<li class="side-toggle">
+<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"><i class="fas fa-bars"></i></button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="pb-5" style="margin-top:128px;">
+<div class="background-shape-3">
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+</div>
+<div class="container">
+<div class="mt-40">
+<h3 class="text-muted text-center">Для начала покупок необходимо авторизироваться на сайте.</h3>
+<div class="row">
+<div class="card" data-id="service_1">
+<div class="card_inner">
+<div class="card_inner__circle">
+<img src="assets/price.png">
+</div>
+<div class="card_inner__content">
+<div class="title">Мастерство ремесленника</div>
+<div class="price">35р</div>
+<div class="text">— Возможность смены фона карточки в <strong>rank</strong></div>
+</div>
+<div class="card_inner__cta">
+<button>
+<span>
+<a href="javascript:void(0)" class="text-white">Приобрести</a>
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="card" data-id="service_2">
+<div class="card_inner">
+<div class="card_inner__circle">
+<img src="assets/price.png">
+</div>
+<div class="card_inner__content">
+<div class="title">Сотворение чуда</div>
+<div class="price">50р</div>
+<div class="text">— Возможность смены цвета элементов в профиле</div>
+</div>
+<div class="card_inner__cta">
+<button>
+<span>
+<a href="javascript:void(0)" class="text-white">Приобрести</a>
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="card" data-id="service_3">
+<div class="card_inner">
+<div class="card_inner__circle">
+<img src="assets/price.png">
+</div>
+<div class="card_inner__content">
+<div class="title">Древнее искусство</div>
+<div class="price">100р</div>
+<div class="text">— Возможность смены фонового изображения в профиле</div>
+</div>
+<div class="card_inner__cta">
+<button>
+<span>
+<a href="javascript:void(0)" class="text-white">Приобрести</a>
+</span>
+</button>
+</div>
+</div>
+</div>
+<div class="card" data-id="donate">
+<div class="card_inner">
+<div class="card_inner__circle">
+<img src="assets/price.png">
+</div>
+<div class="card_inner__content">
+<div class="title">Кастомный донат</div>
+<div class="price">0р</div>
+<div class="text"><input type="number" placeholder="100" style="box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);width: 80%;" min="15" maxlength="4"></div>
+</div>
+<div class="card_inner__cta">
+<button>
+<span>
+<a href="javascript:void(0)" class="text-white">Приобрести</a>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<div class="card d-block" style="width: 700px;height: fit-content;" data-id="time">
+<div class="card-header p-3">
+<h3 style="font-weight: 800;text-transform: uppercase;color: rgba(255, 255, 255, 0.64);">Покупка времени</h3>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-3 m-auto"><input type="number" placeholder="Лет" data-target="years" style="box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);" maxlength="2"></div>
+<div class="col-3 m-auto"><input type="number" placeholder="Дней" data-target="days" style="box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);" maxlength="4"></div>
+<div class="col-3 m-auto"><input type="number" placeholder="Часов" data-target="hours" style="box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);" maxlength="4"></div>
+<div class="col-3 m-auto"><input type="number" placeholder="Минут" data-target="minutes" style="box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);" maxlength="4"></div>
+</div>
+</div>
+<div class="card_inner__cta" style="bottom: -80px;">
+<button>
+<span>
+<a href="javascript:void(0)" class="text-white">Приобрести</a>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="scroll-top">
+<div class="scrollup"></div>
+</div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.downCount.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/scrolling-nav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/custom.js"></script>
+<script>
+    async function login(close) {
+        window.open('https://discord.com/oauth2/authorize?client_id=734730292484505631&redirect_uri=https://minervabot.su/authorize&response_type=code&scope=identify%20guilds', 'login', "menubar=no,location=no,resizable=no,scrollbars=ni,status=no,height=700,width=400,left=500,top=300");
+    }
+
+    
+</script>
+</body>
+</html>
